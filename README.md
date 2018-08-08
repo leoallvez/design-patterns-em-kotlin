@@ -27,11 +27,22 @@ A prova de boas práticas em PHP foi completamente baseada em recomendações de
 </table>
 
 ## Designer Patterns
+Design patterns (Padrões de projeto) são soluções de templates abstratas de alto nível. Pense nelas como um “blueprint” (desenho técnico ou documentação de uma arquitetura, etc.) para soluções e não como uma solução por si própria. Você não achará um framework que você poderá simplesmente aplicar para a sua aplicação; ao invés disso, você chegará ao design patterns através da refatoração do seu código e generalização do seu problema.
+
+Design patterns não são somente aplicados em desenvolvimento de software; design patterns podem ser encontrados em diversas áreas da vida, da engenharia até da arquitetura. Em fato, foi o arquiteto Christopher Alexander que introduziu a ideia de patterns em 1970 para construir um vocabulário comum para discussões sobre design. Ele escreveu:
+
+**_Cada pattern descreve um problema que ocorre várias vezes ao nosso redor e com isso, descrevem a solução para o problema de uma maneira que você pode usar essa solução diversas vezes sem ter que fazer a mesma coisa duas ou mais vezes._**
+
+Os padrões “GoF” como é conhecido a “Gang of Four”, são organizado em 3 grupos distintos:
+* **Padrões Criacionais**: envolvem a criação de instancias de objetos, todos fornecem alguma maneira de desconectar o cliente dos objetos a partir dos quais serão geradas instancias;
+* **Padrões Estruturais**: permitem que você organize classes ou objetos em estruturas maiores;
+* **Padrões Comportamentais**: preocupam-se com a forma como as classes e objetos interagem e com a distribuição de responsabilidades.
+
 <table style="width:100%">
   <tr>
-    <th>Criação</th>
-    <th>Estrutural</th>
-    <th colspan="2">Comportamental</th>
+    <th>Criacionais</th>
+    <th>Estruturais</th>
+    <th colspan="2">Comportamentais</th>
   </tr>
   <tr>
     <td>Abtract Factofy</td>
