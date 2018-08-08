@@ -31,49 +31,49 @@ A prova de boas práticas em PHP foi completamente baseada em recomendações de
   <tr>
     <th>Criação</th>
     <th>Estrutural</th>
-    <th>Comportamental</th>
+    <th colspan="2">Comportamental</th>
   </tr>
   <tr>
-    <td style="color:#4BA30B">Abtract Factofy</td>
-    <td style="color:#176a90">Adapter</td>
-    <td style="color:#ff7b00">Chain of Reponsibility</td>
-    <td style="color:#ff7b00">Observer</td>
+    <td>Abtract Factofy</td>
+    <td>Adapter</td>
+    <td>Chain of Reponsibility</td>
+    <td>Observer</td>
   </tr>
   <tr>
-    <td style="color:#4BA30B">Builder</td>
-    <td style="color:#176a90">Facade</td>
-    <td style="color:#ff7b00">Command</td>
-    <td style="color:#ff7b00">Stade</td>
+    <td>Builder</td>
+    <td>Facade</td>
+    <td>Command</td>
+    <td>Stade</td>
   </tr>
   <tr>
-    <td style="color:#4BA30B">Factory Method</td>
-    <td style="color:#176a90">Bridge</td>
-    <td style="color:#ff7b00">Interprete</td>
-    <td style="color:#ff7b00">Interprete</td>
+    <td>Factory Method</td>
+    <td>Bridge</td>
+    <td>Interprete</td>
+    <td>Interprete</td>
   </tr>
   <tr>
-    <td style="color:#4BA30B">Prototype</td>
-    <td style="color:#176a90">Decorator</td>
-    <td style="color:#ff7b00">Iterator</td>
-    <td style="color:#ff7b00">Template Method</td>
+    <td>Prototype</td>
+    <td>Decorator</td>
+    <td>Iterator</td>
+    <td>Template Method</td>
   </tr>
   <tr>
-    <td style="color:#4BA30B">Singleton</td>
-    <td style="color:#176a90">Flyweight</td>
-    <td style="color:#ff7b00">Mediator</td>
-    <td style="color:#ff7b00">Visitor</td>
+    <td>Singleton</td>
+    <td>Flyweight</td>
+    <td>Mediator</td>
+    <td>Visitor</td>
   </tr>
   <tr>
-    <td style="color:#4BA30B"></td>
-    <td style="color:#176a90">Composite</td>
-    <td style="color:#ff7b00">Memento</td>
-    <td style="color:#ff7b00"></td>
+    <td></td>
+    <td>Composite</td>
+    <td>Memento</td>
+    <td></td>
   </tr>
    <tr>
-    <td style="color:#4BA30B"></td>
-    <td style="color:#176a90">Proxy</td>
-    <td style="color:#ff7b00"></td>
-    <td style="color:#ff7b00"></td>
+    <td></td>
+    <td>Proxy</td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
