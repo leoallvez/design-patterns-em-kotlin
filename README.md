@@ -48,7 +48,7 @@ A prova de boas práticas em PHP foi completamente baseada em recomendações de
   <tr>
     <td>Factory Method</td>
     <td>Bridge</td>
-    <td>Interprete</td>
+    <td>Strategy</td>
     <td>Interprete</td>
   </tr>
   <tr>
