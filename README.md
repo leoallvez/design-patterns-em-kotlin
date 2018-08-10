@@ -26,15 +26,11 @@ A prova de boas práticas em PHP foi completamente baseada em recomendações de
   </tr>
 </table>
 
-## Designer Patterns
-Design patterns (Padrões de projeto) são soluções de templates abstratas de alto nível. Pense nelas como um “blueprint” (desenho técnico ou documentação de uma arquitetura, etc.) para soluções e não como uma solução por si própria. Você não achará um framework que você poderá simplesmente aplicar para a sua aplicação; ao invés disso, você chegará ao design patterns através da refatoração do seu código e generalização do seu problema.
+## Designer Patternso
+Design patterns (Padrões de projeto) são soluções já consolidadas no mercado de trabalho de desenvolvimento de software na solução de problemas comuns, essas soluções ja foram usadas e testadas diversas vezes pelas comunidades. Isso as tornam uma poderosa ferramenta no dia-a-dia do programador, pois não é necessário ficar recriando uma solução que já existem (isso é popularmente conhecido na área como __reinventar a roda__).
 
-Design patterns não são somente aplicados em desenvolvimento de software; design patterns podem ser encontrados em diversas áreas da vida, da engenharia até da arquitetura. Em fato, foi o arquiteto Christopher Alexander que introduziu a ideia de patterns em 1970 para construir um vocabulário comum para discussões sobre design. Ele escreveu:
-
-**_Cada pattern descreve um problema que ocorre várias vezes ao nosso redor e com isso, descrevem a solução para o problema de uma maneira que você pode usar essa solução diversas vezes sem ter que fazer a mesma coisa duas ou mais vezes._**
-
-Os padrões “GoF” como é conhecido a “Gang of Four”, são organizado em 3 grupos distintos:
-* **Padrões Criacionais**: envolvem a criação de instancias de objetos, todos fornecem alguma maneira de desconectar o cliente dos objetos a partir dos quais serão geradas instancias;
+Os padrões  de projeto **“GoF”** como é conhecido a “Gang of Four”, são dividos em três principais grupos:
+* **Padrões Criacionais**: envolvem a criação de instancias de objetos
 * **Padrões Estruturais**: permitem que você organize classes ou objetos em estruturas maiores;
 * **Padrões Comportamentais**: preocupam-se com a forma como as classes e objetos interagem e com a distribuição de responsabilidades.
 
@@ -89,5 +85,5 @@ Os padrões “GoF” como é conhecido a “Gang of Four”, são organizado em
 </table>
 
 ### Strategy 
-
+É um padrão que pode ser usado quando uma classe tem diversos trechos de código com poucas variações e que possam ser utilizados de forma intercambiável. Em vez de serem colocadas em **if** e **elses**, por exemplo, esses trechos podem ser abstraídos em uma interface e em classes concretas que implementa e encapsula o(s) método(s) dessa interface . Uma vez as classes concretas implementadas elas podem ser usadas em uma classe de contexto faz uma composição com interface das classes concertas. Ou seja, o comportamento da classe de contexto pode ser alterado (fazendo uso do poliformismo) tranquilamente, assim como podemos adicionar outras classes concretas para serem usadas na classe de contexto sem grandes alterações na estrutura como um todo;
 ![Strategy](img/Strategy.png)
