@@ -26,7 +26,7 @@ A prova de boas práticas em PHP foi completamente baseada em recomendações de
   </tr>
 </table>
 
-## Designer Patternso
+## Designer Patterns
 Design patterns (Padrões de projeto) são soluções já consolidadas no mercado de trabalho de desenvolvimento de software na solução de problemas comuns, essas soluções ja foram usadas e testadas diversas vezes pelas comunidades. Isso as tornam uma poderosa ferramenta no dia-a-dia do programador, pois não é necessário ficar recriando uma solução que já existem (isso é popularmente conhecido na área como __reinventar a roda__).
 
 Os padrões  de projeto **“GoF”** como é conhecido a “Gang of Four”, são dividos em três principais grupos:
