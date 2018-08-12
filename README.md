@@ -87,3 +87,7 @@ Os padrões  de projeto **“GoF”** como é conhecido a “Gang of Four”, s�
 ### Strategy 
 É um padrão que pode ser usado quando uma classe tem diversos trechos de código com poucas variações e que possam ser utilizados de forma intercambiável. Em vez de serem colocadas em **if** e **elses**, por exemplo, esses trechos podem ser abstraídos em uma interface e em classes concretas que implementa e encapsula o(s) método(s) dessa interface . Uma vez as classes concretas implementadas elas podem ser usadas em uma classe de contexto faz uma composição com interface das classes concertas. Ou seja, o comportamento da classe de contexto pode ser alterado (fazendo uso do poliformismo) tranquilamente, assim como podemos adicionar outras classes concretas para serem usadas na classe de contexto sem grandes alterações na estrutura como um todo;
 ![Strategy](img/Strategy.png)
+
+
+### Singleton 
+![Singleton](img/Singleton.png)
