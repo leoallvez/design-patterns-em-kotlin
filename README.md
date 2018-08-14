@@ -93,3 +93,7 @@ Os padrões  de projeto **“GoF”** como é conhecido a “Gang of Four”, s�
 Tem como finalidade limitar a criação de instâncias de uma determinada classe, mas no geral é criada uma instância única de uma classe da qual poderá ser acessada em qualquer parte do sistema. Essa instância sempre será a mesma, não sendo possível criar novas instância da classe com esse padrão. A classe Singleton deve ter um atributo do seu tipo e esse deve ser estático e privado, essa visibilidade é para não seja possível atribuir valor no atributo de forra da classe Singleton. O único ponto de acesso ao valor do atributo deve ser dentro de um método também estático, tanto que devemos impedir a criação de uma instância da classe com um **new**, isso é feito declarando na classe um método construtor oco e de visibilidade privada. 
 
 ![Singleton](img/Singleton.png)
+
+### Factory Method
+
+![Factory Method](img/Factory-Method.png)
