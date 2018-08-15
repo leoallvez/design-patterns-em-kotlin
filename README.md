@@ -12,17 +12,17 @@ A prova de boas práticas em PHP foi completamente baseada em recomendações de
   <tr>
     <td>Designer Patterns</td>
     <td>06/08/2018</td>
-    <td>13/08/2018</td>
+    <td>06/09/2018</td>
   </tr>
   <tr>
-    <td>S.O.L.I.D</td>
-    <td>13/08/2018</td>
-    <td>20/08/2018</td>
+    <td>PHP - Avançado</td>
+    <td>06/08/2018</td>
+    <td>06/10/2018</td>
   </tr>
   <tr>
-    <td>PSR's (PHP Standards Recommendations) </td>
-    <td>20/08/2018</td>
-    <td>28/08/2018</td>
+    <td>PSR's (PHP Standards Recommendations)</td>
+    <td>06/09/2018</td>
+    <td>06/10/2018</td>
   </tr>
 </table>
 
