@@ -97,3 +97,6 @@ Tem como finalidade limitar a criação de instâncias de uma determinada classe
 ### Factory Method
 
 ![Factory Method](img/Factory-Method.png)
+
+
+
