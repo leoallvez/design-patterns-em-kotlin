@@ -1,11 +1,11 @@
 <?php 
 namespace FactoryMethod;
 
-use FactotyMethod\Product\{
-    CarroProduct, DodgeCharger, DodgerDart
+use FactoryMethod\Product\{
+    CarroProduct, DodgeCharger, DodgeDart
 };
 
-class DodgerFactory implements CarroFactory
+class DodgeFactory implements CarroFactory
 {
     public function criarCarro(string $modeloCarro) : CarroProduct
     {
@@ -13,7 +13,7 @@ class DodgerFactory implements CarroFactory
             case 'changer':
                 return new DodgeCharger();
             case 'dart':
-                return new DodgerDart();
+                return new DodgeDart();
             default:
                 throw new \Exception("Modelo de carro \"{$modeloCarro}\" não existe no sistema.");
                 

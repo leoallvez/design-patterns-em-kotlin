@@ -1,7 +1,7 @@
 <?php 
 namespace FactoryMethod;
 
-use FactotyMethod\Product\{
+use FactoryMethod\Product\{
     CarroProduct, TeslaModeloS, TesLaModeloX
 };
 

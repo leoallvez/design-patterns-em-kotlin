@@ -5,16 +5,16 @@ class TeslaModeloS implements CarroProduct
 {
     public function acelerar()
     {
-        echo "Acelerando Tesla Modelo S\n";
+        echo "Acelerando Tesla Modelo S <br>";
     }
 
     public function frear()
     {
-        echo "Freando Tesla Modelo S\n";
+        echo "Freando Tesla Modelo S <br>";
     }
 
     public function trocarMarcha()
     {
-        echo "Trocando marchar Tesla Modelo S\n";
+        echo "Trocando marchar Tesla Modelo S <br>";
     }
 }

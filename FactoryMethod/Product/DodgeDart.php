@@ -1,20 +1,20 @@
 <?php 
 namespace FactoryMethod\Product;
 
-class DodgerDart implements CarroProduct
+class DodgeDart implements CarroProduct
 {
     public function acelerar()
     {
-        echo "Acelerando Dodger Dart\n";
+        echo "Acelerando Dodge Dart <br>";
     }
 
     public function frear()
     {
-        echo "Freando Dodger Dart\n";
+        echo "Freando Dodge Dart <br>";
     }
 
     public function trocarMarcha()
     {
-        echo "Trocando marchar Dodger Dart\n";
+        echo "Trocando marchar Dodge Dart <br>";
     }
 }

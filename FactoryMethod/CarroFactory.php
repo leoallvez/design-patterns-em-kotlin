@@ -1,7 +1,7 @@
 <?php 
 namespace FactoryMethod;
 
-use FactotyMethod\Product\CarroProduct;
+use FactoryMethod\Product\CarroProduct;
 
 interface CarroFactory
 {
