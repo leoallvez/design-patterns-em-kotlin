@@ -17,7 +17,7 @@ class LogsSingleton
         
     public static function obterInstancia() : self
     {
-        if(empty($instancia)) {
+        if (empty($instancia)) {
             self::$instancia = new self();
         }
         return self::$instancia;
