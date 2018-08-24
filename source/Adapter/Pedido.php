@@ -11,9 +11,34 @@ class Pedido
 
     public function addProduto(string $produto)
     {
-        $this->produto[] = $produto;
+        $this->produtos[] = $produto;
         return $this;
     }
 
-    # Getter's e Setter's aqui...
+    public function getProdutos() : array
+    {
+        return $this->produtos;
+    }
+
+    public function getNumeroPedido() : int
+    {
+        return $this->numeroPedido;
+    }
+
+    public function setNumeroPedido(int $numeroPedido) : Pedido
+    {
+        $this->numeroPedido = $numeroPedido;
+        return $this;
+    }
+
+    public function getValorTotal() : float 
+    {
+        return $this->valorTotal;
+    }
+
+    public function setValorTotal(float $valorTotal) : Pedido
+    {
+        $this->valorTotal = $valorTotal;
+        return $this;
+    }
 }

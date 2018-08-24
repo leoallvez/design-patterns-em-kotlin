@@ -1,7 +1,7 @@
 <?php
 namespace Adapter;
 
-class IntegracaoErpAdapter implements IntegracaoErpAdapter
+class IntegracaoErpAdapter implements IErpAdapter
 {
     private $integracaoErp;
 
@@ -12,7 +12,7 @@ class IntegracaoErpAdapter implements IntegracaoErpAdapter
 
     public function gerarToken(string $apiKey, string $usuario) : string
     {
-        $this->integracaoErp->token($apiKey);
+        return $this->integracaoErp->token($apiKey);
     }
 
     public function enviarPedido(Pedido $pedido, string $token) : bool

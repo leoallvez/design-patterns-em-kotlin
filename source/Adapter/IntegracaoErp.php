@@ -2,6 +2,8 @@
 namespace Adapter;
 
 /**
+* Adaptee: interface já existente
+* da qual o adaptador fará uso.
 * @package Adapter
 * @access public
 */
