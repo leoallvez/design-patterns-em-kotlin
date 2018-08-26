@@ -3,8 +3,8 @@
 namespace Facade;
 
 use Facade\{
-    ModuloSms,
     ModuloEmail,
+    ModuloApiSms,
     ModuloControleEstoque, 
     ModuloControleCliente
 };
@@ -30,7 +30,7 @@ class BibliotecaFacade
         string $apiPass 
     ) : bool
     { 
-        $moduloSms = new ModuloEmail();
+        $moduloSms = new ModuloApiSms();
         $moduloControleCliente = new ModuloControleClientes();
         $moduloEmail = new ModuloEmail();
     

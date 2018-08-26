@@ -10,7 +10,7 @@ class ModuloApiSms
         return "TOKEN_RETORNADO_API";
     }
 
-    public function eviarSms(
+    public function enviarSms(
         string $tokenApi,
         string $nomeRemetente,
         string $telefoneDestinatario,
