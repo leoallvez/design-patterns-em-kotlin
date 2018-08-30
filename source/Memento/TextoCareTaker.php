@@ -2,7 +2,7 @@
 
 namespace Memento;
 
-class TextoCareTake
+class TextoCareTaker
 {
     protected $estadosTexto = [];
 
@@ -11,13 +11,13 @@ class TextoCareTake
         $this->estadoTexto[] = $textoMemento;
     }
 
-    public function retomarUltimoEstadoSalvo() : TextoMemento
+    public function retonarUltimoEstadoSalvo() : TextoMemento
     {
-        if(empty($this->$estadosTexto)) {
+        if(empty($this->estadosTexto)) {
             return null;
         }
         $textoMemento = end($this->estadosTexto);
-        unset($this->estadosTexto[sizeof($this->estadosTexto - 1)]);
+        unset($this->estadosTexto[sizeof($this->estadosTexto) - 1]);
 
         return $textoMemento;
     }

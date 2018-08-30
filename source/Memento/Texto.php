@@ -16,13 +16,13 @@ class Texto
 
     public function escreverTexto(string $texto)
     {
-        $this->textoCareTake->adicionarMemento(new TextoMenento($this->texto));
+        $this->textoCareTake->adicionarMemento(new TextoMemento($this->texto));
         $this->texto .= $texto;
     }
 
     public function desfazerEscrita()
     {
-        $this->texto = $this->textoCareTake->retornarUltimoEstadoSalvo()->getTexto();
+        $this->texto = $this->textoCareTake->retonarUltimoEstadoSalvo()->getTexto();
     }
 
     public function retornarTexto() : string 
