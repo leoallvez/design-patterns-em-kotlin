@@ -8,9 +8,9 @@ class ControleRequisicoesCompraObserver implements Observer
     {
         $this->adicionaListaRequisicaoCompra($codigo);
     }
-
+    //atualizarEstoqueProduto
     public function adicionaListaRequisicaoCompra(string $codigoProduto)
     {
-        echo "Produto acionado à lista de requisições de compra";
+        echo "Produto acionado à lista de requisições de compra<br>";
     }
 }

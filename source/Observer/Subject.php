@@ -9,5 +9,5 @@ interface Subject
 
     public function adicionarObserver(Observer $observer);
 
-    public function notificarObserver(string $codigoProduto); 
+    public function notificarObservers(string $codigoProduto); 
 }

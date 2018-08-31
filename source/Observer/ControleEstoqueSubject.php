@@ -2,7 +2,7 @@
 
 namespace Observer;
 
-class ControleEstoqueSubject extends Subject
+class ControleEstoqueSubject implements Subject
 {
     private $observers;
 
@@ -31,10 +31,10 @@ class ControleEstoqueSubject extends Subject
         $this->observers[] = $observer;
     }
 
-    public function notificarObserver(Observer $observer)
+    public function notificarObservers(string $codigoProduto)
     {
         foreach ($this->observers as $observer) {
-            $observer->atualizarEstoqueProduto($codigoProduto);
+            $observer->atualizado($codigoProduto);
         }
     }
 }

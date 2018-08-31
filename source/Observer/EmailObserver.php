@@ -2,15 +2,15 @@
 
 namespace Observer;
 
-class EmailOberver implements Observer
+class EmailObserver implements Observer
 {
     public function atualizado(string $codigo)
     {
         $this->enviarEmailEstoqueZerado($codigo);
     }
 
-    public function enviarEmailZerado(string $codigoProduto)
+    public function enviarEmailEstoqueZerado(string $codigoProduto)
     {
-        echo 'Email enviado para o setor de compra';
+        echo 'Email enviado para o setor de compra<br>';
     }
 }
