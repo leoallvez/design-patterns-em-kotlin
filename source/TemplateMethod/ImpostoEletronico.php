@@ -4,7 +4,7 @@ namespace TemplateMethod;
 
 class ImpostoEletronico extends ImpostoAbstract
 {
-    protected function calculaImpostoVariavel(float $precoProduto) : float
+    protected function calculaPrimeiroImpostoVariavel(float $precoProduto) : float
     {
         $precoProduto = ($precoProduto * 1.2);
         return $precoProduto;

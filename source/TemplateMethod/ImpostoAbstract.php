@@ -14,7 +14,7 @@ abstract class ImpostoAbstract
         return ($precoProduto * 1.1);
     }
 
-    abstract protected function calculaImpostoVariavel(float $precoProduto) : float;
+    abstract protected function calculaPrimeiroImpostoVariavel(float $precoProduto) : float;
 
     public function calculaImpostosProduto(float $precoProduto) : float
     {

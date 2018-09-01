@@ -4,7 +4,7 @@ namespace TemplateMethod;
 
 class ImpostoAlimentacao extends ImpostoAbstract
 {
-    protected function calculaImpostoVariavel(float $precoProduto) : float
+    protected function calculaPrimeiroImpostoVariavel(float $precoProduto) : float
     {
         return $precoProduto;
     }
