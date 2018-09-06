@@ -40,7 +40,7 @@ Os padrões de projeto da **“GoF”** como é conhecido a “Gang of Four”, 
     <th colspan="2">Comportamentais</th>
   </tr>
   <tr>
-    <td>Abtract Factofy</td>
+    <td>[Abtract Factofy](#abtract-factofy)</td>
     <td>Adapter</td>
     <td>Chain of Reponsibility</td>
     <td>Observer</td>
