@@ -40,7 +40,7 @@ Os padrões de projeto da **“GoF”** como é conhecido a “Gang of Four”, 
     <th colspan="2">Comportamentais</th>
   </tr>
   <tr>
-    <td>[Abtract Factofy](#abtract-factofy)</td>
+    <td>Abtract Factofy</td>
     <td>Adapter</td>
     <td>Chain of Reponsibility</td>
     <td>Observer</td>
@@ -112,7 +112,8 @@ Atribuir reponsabilidades adicionais a um objeto dinamicamente. Os decorators fo
 Fornece uma interface unificada para um conjunto de interfaces em um subsistema. O Façade define uma interface de nível mais alto que torna o subsistema fácil de usar.
 
 ### Factory Method
-Define uma interface para criar um objeto, mas deixa as subclasses decidirem qual classe postergar (defer) a instanciação às subclasses.
+Define uma interface para criar um objeto, mas deixa as subclasses decidirem qual classe postergar (defer) a instanciação às subclasses.<br>
+
 ![Factory Method](img/Factory-Method.png)
 
 ### Flyweight
@@ -141,14 +142,16 @@ Esepecifica os tipos de objetos a serem criados usando um instância prototípic
 Fornece um objeto representante (surroge) ou um marcador de outro objeto para controlar o acesso ao mesmo.
 
 ### Singleton 
-Garante que uma classe tenha somente uma instância e fornece um ponto global de acesso para ela.
+Garante que uma classe tenha somente uma instância e fornece um ponto global de acesso para ela.<br>
+
 ![Singleton](img/Singleton.png)
 
 ### State 
 Permite que um objeto altere seu comportamento quando seu estado interno muda. O objeto parecerá ter mudado de classe.
 
 ### Strategy 
-Define uma família de algoritmos encapsula cada um deles e os torna intercambiáveis. O Strategy permite que o algoritmo varie.
+Define uma família de algoritmos encapsula cada um deles e os torna intercambiáveis. O Strategy permite que o algoritmo varie.<br>
+
 ![Strategy](img/Strategy.png)
 
 ### Template Method 
@@ -156,12 +159,3 @@ Define o esqueleto de um algoritmo em uma operação, postergando a definição 
 
 ### Visitor
 Representa uma operação a ser executada sobre os elementos da estrutura de um objeto. O visitor permite que voce defina uma nova operação sem mudar as classes dos elementos sobre os quais opera.
-
-
-
-
-
-
-
-
-
