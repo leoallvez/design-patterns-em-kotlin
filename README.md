@@ -159,3 +159,6 @@ Define o esqueleto de um algoritmo em uma operação, postergando a definição 
 
 ## Visitor
 Representa uma operação a ser executada sobre os elementos da estrutura de um objeto. O visitor permite que você defina uma nova operação sem mudar as classes dos elementos sobre os quais opera.
+
+
+
