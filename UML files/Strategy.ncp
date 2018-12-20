@@ -1,0 +1,77 @@
+<Project>
+  <Name>sem Título</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>sem Título</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>Strategy</Name>
+        <Access>Public</Access>
+        <Location left="1553" top="238" />
+        <Size width="240" height="78" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void doSomething()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConcreteStategyA</Name>
+        <Access>Public</Access>
+        <Location left="1418" top="392" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void doSomething()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConcreteStategyB</Name>
+        <Access>Public</Access>
+        <Location left="1592" top="392" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void doSomething()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConcreteStategyC</Name>
+        <Access>Public</Access>
+        <Location left="1764" top="392" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void doSomething()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Context</Name>
+        <Access>Public</Access>
+        <Location left="1256" top="238" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Context(Strategy s)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Realization" first="1" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="2" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="3" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="4" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1528</X>
+          <Y>277</Y>
+        </BendPoint>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

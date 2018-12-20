@@ -1,0 +1,63 @@
+<Project>
+  <Name>sem Título</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>sem Título</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>ConcreteProduct</Name>
+        <Access>Public</Access>
+        <Location left="1152" top="363" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void doSomething()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>Product</Name>
+        <Access>Public</Access>
+        <Location left="1152" top="179" />
+        <Size width="162" height="78" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void doSomething()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>Creator</Name>
+        <Access>Public</Access>
+        <Location left="882" top="179" />
+        <Size width="162" height="78" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">Product factoryMethod()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConcreteCreator</Name>
+        <Access>Public</Access>
+        <Location left="882" top="363" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public Product factoryMethod()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Realization" first="0" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="2" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1127</X>
+          <Y>218</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="3" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
