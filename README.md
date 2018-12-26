@@ -1,5 +1,5 @@
 
-# PHP - Boas práticas
+# Boas práticas
 
 ## Designer Patterns
 Design patterns (Padrões de projeto) são soluções já consolidadas na solução de problemas comuns em projetos de desenvolvimento de sofware, essas soluções já foram testadas e consolidadas. 
