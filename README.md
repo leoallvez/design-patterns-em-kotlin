@@ -1,30 +1,6 @@
 
 # PHP - Boas práticas
 
-### Plano de estudo.
-<table style="width:100%">
-  <tr>
-    <th>Conteúdo</th>
-    <th>Início</th>
-    <th>Fim</th>
-  </tr>
-  <tr>
-    <td>Designer Patterns</td>
-    <td>06/08/2018</td>
-    <td>06/09/2018</td>
-  </tr>
-  <tr>
-    <td>PHP - Avançado</td>
-    <td>06/08/2018</td>
-    <td>06/10/2018</td>
-  </tr>
-  <tr>
-    <td>PSR's (PHP Standards Recommendations)</td>
-    <td>06/09/2018</td>
-    <td>06/10/2018</td>
-  </tr>
-</table>
-
 ## Designer Patterns
 Design patterns (Padrões de projeto) são soluções já consolidadas na solução de problemas comuns em projetos de desenvolvimento de sofware, essas soluções já foram testadas e consolidadas. 
 
