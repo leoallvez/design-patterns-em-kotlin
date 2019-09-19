@@ -1,7 +1,7 @@
 # Boas práticas
 
 ## Designer Patterns
-Design patterns (Padrões de projeto) são soluções já consolidadas na solução de problemas comuns em projetos de desenvolvimento de sofware, essas soluções já foram testadas e consolidadas. 
+Design patterns (Padrões de projeto) são soluções de problemas comuns em projetos de desenvolvimento de sofware, essas soluções já foram amplamente estudadas, testadas e consolidadas. 
 
 Os padrões de projeto da **“GoF”** como é conhecido a “Gang of Four”, são dividos em três principais grupos:
 * **Padrões Criacionais**: envolvem a criação de instâncias de objetos
