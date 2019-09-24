@@ -9,8 +9,8 @@ Design patterns (Padrões de projeto) são soluções de problemas comuns em pro
 
 ## Índice
 * [Padrões de Criação](#creational)
+    * [Factory Method](#factory-method)
 	* [Builder](#builder)
-	* [Factory Method](#factory-method)
 	* [Singleton](#singleton)
 	* [Abstract Factory](#abstract-factory)
 * [Padrões Estruturais](#structural)
@@ -84,9 +84,61 @@ Design patterns (Padrões de projeto) são soluções de problemas comuns em pro
 Padrões de Criação
 ==========
 
-> Na engenharia de software, os padrões de design criacional são padrões de design que lidam com mecanismos de criação de objetos, tentando criar objetos de maneira adequada à situação. A forma básica de criação de objeto pode resultar em problemas de design ou adicionar complexidade ao design. Os padrões de design criacional resolvem esse problema controlando de alguma forma a criação desse objeto.
+> Os padrões de criação abstraem o processo de instaciação.
+> Eles ajudam a tornar um sistema independente de como seus objetos são criados, composto e representados.
+> Há dois temas recorrentes nesse padrões.
+> Primeiro, todos encapsulam conhecimento sobre quais classes concretas são usadas pelo sistema.
+> Segundo, ocultam o modo como as instâncias destas classes concretas são criadas e compostas.
 >
->
+
+[Abstract Factory](/patterns/src/test/kotlin/AbstractFactory.kt)
+-------------------
+
+Fornece uma interface para a criação de famílias de objetos relacionados ou dependentes sem especificar suas classes concretas.
+
+#### Exemplo
+
+```kotlin
+interface Plant
+
+class OrangePlant : Plant
+
+class ApplePlant : Plant
+
+abstract class PlantFactory {
+    abstract fun makePlant(): Plant
+
+    companion object {
+        inline fun <reified T : Plant> createFactory(): PlantFactory = when (T::class) {
+            OrangePlant::class -> OrangeFactory()
+            ApplePlant::class  -> AppleFactory()
+            else               -> throw IllegalArgumentException()
+        }
+    }
+}
+
+class AppleFactory : PlantFactory() {
+    override fun makePlant(): Plant = ApplePlant()
+}
+
+class OrangeFactory : PlantFactory() {
+    override fun makePlant(): Plant = OrangePlant()
+}
+```
+
+#### Uso
+
+```kotlin
+val plantFactory = PlantFactory.createFactory<OrangePlant>()
+val plant = plantFactory.makePlant()
+println("Created plant: $plant")
+```
+
+#### Saída
+
+```kotlin
+Created plant: OrangePlant@4f023edb
+```
 
 [Builder](/patterns/src/test/kotlin/Builder.kt)
 ----------
@@ -209,6 +261,7 @@ showing dialog Dialog@5f184fc6
 [Factory Method](/patterns/src/test/kotlin/FactoryMethod.kt)
 -----------------
 Define uma interface para criar um objeto, mas deixa as subclasses decidirem qual classe postergar (defer) a instanciação às subclasses.
+
 ![Factory Method](img/Factory-Method.png)
 
 #### Exemplo
@@ -294,55 +347,6 @@ Start
 Initializing with object: PrinterDriver@6ff3c5b5
 Printing with object: PrinterDriver@6ff3c5b5
 Printing with object: PrinterDriver@6ff3c5b5
-```
-
-[Abstract Factory](/patterns/src/test/kotlin/AbstractFactory.kt)
--------------------
-
-Fornece uma interface para a criação de famílias de objetos relacionados ou dependentes sem especificar suas classes concretas
-
-#### Exemplo
-
-```kotlin
-interface Plant
-
-class OrangePlant : Plant
-
-class ApplePlant : Plant
-
-abstract class PlantFactory {
-    abstract fun makePlant(): Plant
-
-    companion object {
-        inline fun <reified T : Plant> createFactory(): PlantFactory = when (T::class) {
-            OrangePlant::class -> OrangeFactory()
-            ApplePlant::class  -> AppleFactory()
-            else               -> throw IllegalArgumentException()
-        }
-    }
-}
-
-class AppleFactory : PlantFactory() {
-    override fun makePlant(): Plant = ApplePlant()
-}
-
-class OrangeFactory : PlantFactory() {
-    override fun makePlant(): Plant = OrangePlant()
-}
-```
-
-#### Uso
-
-```kotlin
-val plantFactory = PlantFactory.createFactory<OrangePlant>()
-val plant = plantFactory.makePlant()
-println("Created plant: $plant")
-```
-
-#### Saída
-
-```kotlin
-Created plant: OrangePlant@4f023edb
 ```
 
 Padrões Estruturais
