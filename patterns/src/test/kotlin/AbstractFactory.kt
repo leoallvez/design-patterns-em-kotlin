@@ -1,45 +1,42 @@
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-//Based on: http://stackoverflow.com/a/13030163/361832
+interface Simpson
 
-interface Plant
+class HomerSimpson : Simpson
 
-class OrangePlant : Plant
+class MargeSimpson : Simpson
 
-class ApplePlant : Plant
+abstract class SimpsonFactory {
 
-abstract class PlantFactory {
-
-    abstract fun makePlant(): Plant
+    abstract fun makeSimpson(): Simpson
 
     companion object {
-        inline fun <reified T : Plant> createFactory(): PlantFactory =
+        inline fun <reified T : Simpson> createFactory(): SimpsonFactory =
             when (T::class) {
-                OrangePlant::class -> OrangeFactory()
-                ApplePlant::class -> AppleFactory()
+                HomerSimpson::class -> HomerFactory()
+                MargeSimpson::class -> MargeFactory()
                 else -> throw IllegalArgumentException()
             }
     }
 }
 
-class AppleFactory : PlantFactory() {
-    override fun makePlant(): Plant = ApplePlant()
+class HomerFactory : SimpsonFactory() {
+    override fun makeSimpson(): Simpson = HomerSimpson()
 }
 
-class OrangeFactory : PlantFactory() {
-    override fun makePlant(): Plant = OrangePlant()
+class MargeFactory : SimpsonFactory() {
+    override fun makeSimpson(): Simpson = MargeSimpson()
 }
-
 
 class AbstractFactoryTest {
 
     @Test
     fun `Abstract Factory`() {
-        val plantFactory = PlantFactory.createFactory<OrangePlant>()
-        val plant = plantFactory.makePlant()
-        println("Created plant: $plant")
+        val simpsonFactory = SimpsonFactory.createFactory<MargeSimpson>()
+        val simpson = simpsonFactory.makeSimpson()
+        println("Simpson instanciado: $simpson")
 
-        assertThat(plant).isInstanceOf(OrangePlant::class.java)
+        assertThat(simpson).isInstanceOf(MargeSimpson::class.java)
     }
 }
