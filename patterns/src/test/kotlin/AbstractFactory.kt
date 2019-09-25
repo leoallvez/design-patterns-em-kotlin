@@ -1,12 +1,12 @@
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-
+//Produto Abstrato
 interface Simpson
-
+//Produtos Concretos
 class HomerSimpson : Simpson
-
+//
 class MargeSimpson : Simpson
-
+//Fábrica Abstrata
 abstract class SimpsonFactory {
 
     abstract fun makeSimpson(): Simpson
@@ -20,7 +20,7 @@ abstract class SimpsonFactory {
             }
     }
 }
-
+//Fábricas Concretas
 class HomerFactory : SimpsonFactory() {
     override fun makeSimpson(): Simpson = HomerSimpson()
 }

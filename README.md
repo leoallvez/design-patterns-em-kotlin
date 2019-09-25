@@ -9,10 +9,10 @@ Design patterns (Padrões de projeto) são soluções de problemas comuns em pro
 
 ## Índice
 * [Padrões de Criação](#creational)
-    * [Factory Method](#factory-method)
-	* [Builder](#builder)
-	* [Singleton](#singleton)
 	* [Abstract Factory](#abstract-factory)
+    * [Builder](#builder)
+    * [Factory Method](#factory-method)
+	* [Singleton](#singleton)
 * [Padrões Estruturais](#structural)
 	* [Adapter](#adapter)
 	* [Decorator](#decorator)
@@ -99,45 +99,47 @@ Fornece uma interface para a criação de famílias de objetos relacionados ou d
 #### Exemplo
 
 ```kotlin
-interface Plant
+//Produto Abstrato
+interface Simpson
+//Produtos Concretos
+class HomerSimpson : Simpson
+class MargeSimpson : Simpson
+//Fábrica Abstrata
+abstract class SimpsonFactory {
 
-class OrangePlant : Plant
-
-class ApplePlant : Plant
-
-abstract class PlantFactory {
-    abstract fun makePlant(): Plant
+    abstract fun makeSimpson(): Simpson
 
     companion object {
-        inline fun <reified T : Plant> createFactory(): PlantFactory = when (T::class) {
-            OrangePlant::class -> OrangeFactory()
-            ApplePlant::class  -> AppleFactory()
-            else               -> throw IllegalArgumentException()
-        }
+        inline fun <reified T : Simpson> createFactory(): SimpsonFactory =
+            when (T::class) {
+                HomerSimpson::class -> HomerFactory()
+                MargeSimpson::class -> MargeFactory()
+                else -> throw IllegalArgumentException()
+            }
     }
 }
-
-class AppleFactory : PlantFactory() {
-    override fun makePlant(): Plant = ApplePlant()
+//Fábricas Concretas
+class HomerFactory : SimpsonFactory() {
+    override fun makeSimpson(): Simpson = HomerSimpson()
 }
 
-class OrangeFactory : PlantFactory() {
-    override fun makePlant(): Plant = OrangePlant()
+class MargeFactory : SimpsonFactory() {
+    override fun makeSimpson(): Simpson = MargeSimpson()
 }
 ```
 
 #### Uso
 
 ```kotlin
-val plantFactory = PlantFactory.createFactory<OrangePlant>()
-val plant = plantFactory.makePlant()
-println("Created plant: $plant")
+val simpsonFactory = SimpsonFactory.createFactory<MargeSimpson>()
+val simpson = simpsonFactory.makeSimpson()
+println("Simpson instanciado: $simpson")
 ```
 
 #### Saída
 
 ```kotlin
-Created plant: OrangePlant@4f023edb
+Simpson instanciado: MargeSimpson@67205a84
 ```
 
 [Builder](/patterns/src/test/kotlin/Builder.kt)
