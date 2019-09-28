@@ -1,18 +1,18 @@
 import org.junit.jupiter.api.Test
 import java.io.File
 
-// Let's assume that Dialog class is provided by external library.
-// We have only access to Dialog public interface which cannot be changed.
+// Vamos supor que a classe Dialog seja fornecida por uma biblioteca externa.
+// Temos apenas acesso à interface pública do Dialog que não pode ser alterada.
 
 class Dialog {
 
-    fun setTitle(text: String) = println("setting title text $text")
-    fun setTitleColor(color: String) = println("setting title color $color")
-    fun setMessage(text: String) = println("setting message $text")
-    fun setMessageColor(color: String) = println("setting message color $color")
-    fun setImage(bitmapBytes: ByteArray) = println("setting image with size ${bitmapBytes.size}")
+    fun setTitle(text: String) = println("definindo texto do título: '$text'")
+    fun setTitleColor(color: String) = println("definindo a cor do título: $color")
+    fun setMessage(text: String) = println("definindo a mensagem: '$text'")
+    fun setMessageColor(color: String) = println("definindo a cor da mensagem: $color")
+    fun setImage(bitmapBytes: ByteArray) = println("mostrando imagem com tamanho: '${bitmapBytes.size}'")
 
-    fun show() = println("showing dialog $this")
+    fun show() = println("mostrando dialog: $this")
 }
 
 // Builder
@@ -65,7 +65,7 @@ class DialogBuilder() {
     }
 }
 
-//Function that creates dialog builder and builds Dialog
+//Função que cria o builder dos dialogs e cria o Dialog.
 fun dialog(init: DialogBuilder.() -> Unit): Dialog =
     DialogBuilder(init).build()
 
@@ -79,10 +79,10 @@ class BuilderTest {
         val dialog: Dialog =
             dialog {
                 title {
-                    text = "Dialog Title"
+                    text = "Dialog título"
                 }
                 message {
-                    text = "Dialog Message"
+                    text = "Dialog mensagem"
                     color = "#333333"
                 }
                 image {
@@ -90,7 +90,7 @@ class BuilderTest {
                 }
             }
 
-        println("Show dialog")
+        println("Mostrar dialog")
 
         dialog.show()
     }

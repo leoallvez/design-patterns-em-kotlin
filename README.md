@@ -150,30 +150,24 @@ Separa a construção de um objeto complexo de sua representação, de modo que 
 #### Exemplo
 
 ```kotlin
-// Let's assume that Dialog class is provided by external library.
-// We have only access to Dialog public interface which cannot be changed.
+// Vamos supor que a classe Dialog seja fornecida por uma biblioteca externa.
+// Temos apenas acesso à interface pública do Dialog que não pode ser alterada.
 
-class Dialog() {
+// Product
+class Dialog {
 
-    fun showTitle() = println("showing title")
+    fun setTitle(text: String) = println("definindo texto do título: '$text'")
+    fun setTitleColor(color: String) = println("definindo a cor do título: $color")
+    fun setMessage(text: String) = println("definindo a mensagem: '$text'")
+    fun setMessageColor(color: String) = println("definindo a cor da mensagem: $color")
+    fun setImage(bitmapBytes: ByteArray) = println("mostrando imagem com tamanho: '${bitmapBytes.size}'")
 
-    fun setTitle(text: String) = println("setting title text $text")
-
-    fun setTitleColor(color: String) = println("setting title color $color")
-
-    fun showMessage() = println("showing message")
-
-    fun setMessage(text: String) = println("setting message $text")
-
-    fun setMessageColor(color: String) = println("setting message color $color")
-
-    fun showImage(bitmapBytes: ByteArray) = println("showing image with size ${bitmapBytes.size}")
-
-    fun show() = println("showing dialog $this")
+    fun show() = println("mostrando dialog: $this")
 }
 
-//Builder:
+// Builder
 class DialogBuilder() {
+
     constructor(init: DialogBuilder.() -> Unit) : this() {
         init()
     }
@@ -182,35 +176,34 @@ class DialogBuilder() {
     private var messageHolder: TextView? = null
     private var imageHolder: File? = null
 
-    fun title(init: TextView.() -> Unit) {
-        titleHolder = TextView().apply { init() }
+    fun title(attributes: TextView.() -> Unit) {
+        titleHolder = TextView().apply { attributes() }
     }
 
-    fun message(init: TextView.() -> Unit) {
-        messageHolder = TextView().apply { init() }
+    fun message(attributes: TextView.() -> Unit) {
+        messageHolder = TextView().apply { attributes() }
     }
 
-    fun image(init: () -> File) {
-        imageHolder = init()
+    fun image(attributes: () -> File) {
+        imageHolder = attributes()
     }
 
     fun build(): Dialog {
+        println("build")
         val dialog = Dialog()
 
         titleHolder?.apply {
             dialog.setTitle(text)
             dialog.setTitleColor(color)
-            dialog.showTitle()
         }
 
         messageHolder?.apply {
             dialog.setMessage(text)
             dialog.setMessageColor(color)
-            dialog.showMessage()
         }
 
         imageHolder?.apply {
-            dialog.showImage(readBytes())
+            dialog.setImage(readBytes())
         }
 
         return dialog
@@ -226,23 +219,21 @@ class DialogBuilder() {
 #### Uso
 
 ```kotlin
-//Function that creates dialog builder and builds Dialog
-fun dialog(init: DialogBuilder.() -> Unit): Dialog {
-    return DialogBuilder(init).build()
-}
+//Função que cria o builder dos dialogs e cria o Dialog.
+fun dialog(init: DialogBuilder.() -> Unit): Dialog = DialogBuilder(init).build()
 
 val dialog: Dialog = dialog {
-	title {
-    	text = "Dialog Title"
+        title {
+            text = "Dialog título"
+        }
+        message {
+            text = "Dialog mensagem"
+            color = "#333333"
+        }
+        image {
+            File.createTempFile("image", "jpg")
+        }
     }
-    message {
-        text = "Dialog Message"
-        color = "#333333"
-    }
-    image {
-        File.createTempFile("image", "jpg")
-    }
-}
 
 dialog.show()
 ```
@@ -250,14 +241,13 @@ dialog.show()
 #### Saída
 
 ```
-setting title text Dialog Title
-setting title color #00000
-showing title
-setting message Dialog Message
-setting message color #333333
-showing message
-showing image with size 0
-showing dialog Dialog@5f184fc6
+definindo texto do título: 'Dialog título'
+definindo a cor do título: #00000
+definindo a mensagem: 'Dialog mensagem'
+definindo a cor da mensagem: #333333
+mostrando imagem com tamanho: '0'
+Mostrar dialog
+mostrando dialog: Dialog@731a74c
 ```
 
 [Factory Method](/patterns/src/test/kotlin/FactoryMethod.kt)
