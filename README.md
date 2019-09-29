@@ -219,7 +219,7 @@ class DialogBuilder() {
 #### Uso
 
 ```kotlin
-//Função que cria o builder dos dialogs e cria o Dialog.
+//Função que cria o builder dos dialogs e cria o Dialog que é a classe produto.
 fun dialog(init: DialogBuilder.() -> Unit): Dialog = DialogBuilder(init).build()
 
 val dialog: Dialog = dialog {
