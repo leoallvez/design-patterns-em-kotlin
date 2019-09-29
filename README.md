@@ -254,8 +254,6 @@ mostrando dialog: Dialog@731a74c
 -----------------
 Define uma interface para criar um objeto, mas deixa as subclasses decidirem qual classe postergar (defer) a instanciação às subclasses.
 
-![Factory Method](img/Factory-Method.png)
-
 #### Exemplo
 
 ```kotlin
