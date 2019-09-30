@@ -304,17 +304,15 @@ Moeda dos EUA: USD
 
 Garante que uma classe tenha somente uma instância e fornece um ponto global de acesso para ela.
 
-![Singleton](img/Singleton.png)
-
 #### Exemplo:
 
 ```kotlin
-object PrinterDriver {
+object Impressora {
     init {
-        println("Initializing with object: $this")
+        println("Inicializando o objeto: $this")
     }
 
-    fun print() = println("Printing with object: $this")
+    fun imprimir(): Impressora = apply { println("Imprimindo objeto: $this") }
 }
 ```
 
@@ -322,17 +320,17 @@ object PrinterDriver {
 
 ```kotlin
 println("Start")
-PrinterDriver.print()
-PrinterDriver.print()
+val impressora1 = Impressora.imprimir()
+val impressora2 = Impressora.imprimir()
 ```
 
 #### Saída
 
 ```
 Start
-Initializing with object: PrinterDriver@6ff3c5b5
-Printing with object: PrinterDriver@6ff3c5b5
-Printing with object: PrinterDriver@6ff3c5b5
+Inicializando o objeto: Impressora@192b07fd
+Imprimindo objeto: Impressora@192b07fd
+Imprimindo objeto: Impressora@192b07fd
 ```
 
 Padrões Estruturais

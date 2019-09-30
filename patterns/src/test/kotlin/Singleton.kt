@@ -1,13 +1,12 @@
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-object PrinterDriver {
+object Impressora {
     init {
-        println("Initializing with object: $this")
+        println("Inicializando o objeto: $this")
     }
 
-    fun print(): PrinterDriver =
-        apply { println("Printing with object: $this") }
+    fun imprimir(): Impressora = apply { println("Imprimindo objeto: $this") }
 }
 
 class SingletonTest {
@@ -15,10 +14,10 @@ class SingletonTest {
     @Test
     fun `Singleton`() {
         println("Start")
-        val printerFirst = PrinterDriver.print()
-        val printerSecond = PrinterDriver.print()
+        val impressora1 = Impressora.imprimir()
+        val impressora2 = Impressora.imprimir()
 
-        assertThat(printerFirst).isSameAs(PrinterDriver)
-        assertThat(printerSecond).isSameAs(PrinterDriver)
+        assertThat(impressora1).isSameAs(Impressora)
+        assertThat(impressora2).isSameAs(Impressora)
     }
 }
