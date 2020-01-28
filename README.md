@@ -1,4 +1,4 @@
-# Design Patterns Em Kotlin
+# Design Patterns em Kotlin
 
 Projeto mantido por [Leonardo Alves](https://www.linkedin.com/in/leoallvez/)
 
