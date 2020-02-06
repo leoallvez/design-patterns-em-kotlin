@@ -1009,7 +1009,7 @@ Yearly cost: 20000
 [Mediator](/patterns/src/test/kotlin/Mediator.kt)
 -------
 
-Mediator design pattern is used to provide a centralized communication medium between different objects in a system. This pattern is very helpful in an enterprise application where multiple objects are interacting with each other.
+O padrão de design do mediador é usado para fornecer um meio de comunicação centralizado entre diferentes objetos em um sistema. Esse padrão é muito útil em um aplicativo corporativo em que vários objetos estão interagindo entre si.
 #### Exemplo
 
 ```kotlin
