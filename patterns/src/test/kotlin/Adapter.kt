@@ -2,27 +2,27 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import java.math.BigDecimal
 
-interface Temperature {
-    var temperature: Double
+interface Temperatura {
+    var temperatura: Double
 }
 
-class CelsiusTemperature(override var temperature: Double) : Temperature
+class Celsius(override var temperatura: Double) : Temperatura
 
-class FahrenheitTemperature(private var celsiusTemperature: CelsiusTemperature) : Temperature {
+class Fahrenheit(private var celsius: Celsius) : Temperatura {
 
-    override var temperature: Double
-        get() = convertCelsiusToFahrenheit(celsiusTemperature.temperature)
+    override var temperatura: Double
+        get() = celsiusToFahrenheit(celsius.temperatura)
         set(temperatureInF) {
-            celsiusTemperature.temperature = convertFahrenheitToCelsius(temperatureInF)
+            celsius.temperatura = fahrenheitToCelsius(temperatureInF)
         }
 
-    private fun convertFahrenheitToCelsius(f: Double): Double =
-        ((BigDecimal.valueOf(f).setScale(2) - BigDecimal(32)) * BigDecimal(5) / BigDecimal(9))
+    private fun fahrenheitToCelsius(fahrenheit: Double): Double =
+        ((BigDecimal.valueOf(fahrenheit).setScale(2) - BigDecimal(32)) * BigDecimal(5) / BigDecimal(9))
             .toDouble()
 
 
-    private fun convertCelsiusToFahrenheit(c: Double): Double =
-        ((BigDecimal.valueOf(c).setScale(2) * BigDecimal(9) / BigDecimal(5)) + BigDecimal(32))
+    private fun celsiusToFahrenheit(celsius: Double): Double =
+        ((BigDecimal.valueOf(celsius).setScale(2) * BigDecimal(9) / BigDecimal(5)) + BigDecimal(32))
             .toDouble()
 }
 
@@ -30,17 +30,17 @@ class AdapterTest {
 
     @Test
     fun `Adapter`() {
-        val celsiusTemperature = CelsiusTemperature(0.0)
-        val fahrenheitTemperature = FahrenheitTemperature(celsiusTemperature)
+        val celsius = Celsius(0.0)
+        val fahrenheit = Fahrenheit(celsius)
 
-        celsiusTemperature.temperature = 36.6
-        println("${celsiusTemperature.temperature} C -> ${fahrenheitTemperature.temperature} F")
+        celsius.temperatura = 36.6
+        println("${celsius.temperatura} C -> ${fahrenheit.temperatura} F")
 
-        assertThat(fahrenheitTemperature.temperature).isEqualTo(97.88)
+        assertThat(fahrenheit.temperatura).isEqualTo(97.88)
 
-        fahrenheitTemperature.temperature = 100.0
-        println("${fahrenheitTemperature.temperature} F -> ${celsiusTemperature.temperature} C")
+        fahrenheit.temperatura = 100.0
+        println("${fahrenheit.temperatura} F -> ${celsius.temperatura} C")
 
-        assertThat(celsiusTemperature.temperature).isEqualTo(37.78)
+        assertThat(celsius.temperatura).isEqualTo(37.78)
     }
 }
