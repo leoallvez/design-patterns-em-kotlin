@@ -622,7 +622,6 @@ println(cabbinet.getPrice())
 600
 ```
 
-
 Padrões Comportamentais
 ==========
 
