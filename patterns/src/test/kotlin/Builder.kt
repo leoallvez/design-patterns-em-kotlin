@@ -81,6 +81,9 @@ class BuilderTest {
                 title {
                     text = "Dialog título"
                 }
+//                title {
+//                    text = "Ok eu estou aqui"
+//                }
                 message {
                     text = "Dialog mensagem"
                     color = "#333333"

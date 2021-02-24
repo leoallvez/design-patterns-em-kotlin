@@ -5,7 +5,7 @@ interface HeadersChain {
     fun addHeader(inputHeader: String): String
 }
 
-class AuthenticationHeader(val token: String?, var next: HeadersChain? = null) : HeadersChain {
+class AuthenticationHeader(private val token: String?, var next: HeadersChain? = null) : HeadersChain {
 
     override fun addHeader(inputHeader: String): String {
         token ?: throw IllegalStateException("Token should be not null")
@@ -14,7 +14,7 @@ class AuthenticationHeader(val token: String?, var next: HeadersChain? = null) :
     }
 }
 
-class ContentTypeHeader(val contentType: String, var next: HeadersChain? = null) : HeadersChain {
+class ContentTypeHeader(private val contentType: String, var next: HeadersChain? = null) : HeadersChain {
 
     override fun addHeader(inputHeader: String): String =
         inputHeader + "ContentType: $contentType\n"
